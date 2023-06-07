@@ -7,6 +7,10 @@ const helmSelection = document.querySelector('#helmSelection')
 const chestSelection = document.querySelector('#chestSelection')
 const legSelection = document.querySelector('#legSelection')
 
+//Form Query
+const form = document.querySelector('#armorSelection')
+const armorDisplay = document.querySelector('#armorSetTable')
+let armorName = document.querySelector('#armorSetName')
 
 //Form selection dropdowns
 const getHelmOptions = () => {
@@ -54,6 +58,54 @@ const getLegOptions = () => {
     })
 }
 
+//Form Submission
+const addArmorSet = (e) => {
+    e.preventDefault()
+    armorDisplay.innerHTML = ''
+
+    let helmObj = {
+        hName: helmName,
+        hURL: imageUrl,
+        hDefense: baseDefense,
+        hEffect: specialEffect,
+        hLocation: location
+    }
+
+    let chestObj = {
+        cName: chestName,
+        cURL: imageUrl,
+        cDefense: baseDefense,
+        cEffect: specialEffect,
+        cLocation: location
+    }
+
+    let legObj = {
+        lName: legName,
+        lURL: imageUrl,
+        lDefense: baseDefense,
+        lEffect: specialEffect,
+        lLocation: location
+    }
+
+    let armorObj = {
+        arName: armorName.value,
+        helmObj,
+        chestObj,
+        legObj
+    }
+
+    axios.post(`${baseURL}/armorSet`, armorObj)
+        .then(res => {
+            console.log(res.data)
+            legSelection.value = '',
+            chestSelection.value = ''
+            legSelection.value = ''
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
 
 
 
@@ -62,3 +114,4 @@ const getLegOptions = () => {
 getHelmOptions()
 getChestOptions()
 getLegOptions()
+form.addEventListener('submit', addArmorSet)

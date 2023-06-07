@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const {getHelms, getChestArmor, getLegArmor} = require('./controller')
+const {getHelms, getChestArmor, getLegArmor, addArmorSet} = require('./controller')
 
 const app = express()
 
@@ -12,6 +12,8 @@ app.get('/helms', getHelms)
 app.get('/chestArmor', getChestArmor)
 app.get('/legArmor', getLegArmor)
 
+// Endpoints for Armor Creation
+app.get('/armorSet', addArmorSet)
 
 
 

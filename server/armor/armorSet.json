@@ -1,0 +1,22 @@
+[
+    {
+        "userId": 1,
+        "armorSetName": "",
+        "helmPieceName": "",
+        "helmUrl": "",
+        "helmDefense": "",
+        "helmEffect": "",
+        "helmLocation": "",
+        "chestPieceName": "",
+        "chestUrl": "",
+        "chestDefense": "",
+        "chestEffect": "",
+        "chestLocation": "",
+        "legPieceName": "",
+        "legUrl": "",
+        "legDefense": "",
+        "legEffect": "",
+        "legLocation": ""
+        
+    }
+]
