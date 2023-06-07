@@ -2,17 +2,17 @@
     {
         "legId": 1,
         "legName": "Zonaite Shin Guard",
-        "imageUrl": "https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_shin_guards_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png",
-        "baseDefense": 4,
-        "specialEffect": "Energy Up",
-        "location": "Sky Mine"
+        "lImageUrl": "https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_shin_guards_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png",
+        "lBaseDefense": 4,
+        "lSpecialEffect": "Energy Up",
+        "lLocation": "Sky Mine"
     },
     {
         "legId": 2,
         "legName": "Charged Trousers",
-        "imageUrl": "https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_trousers_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png",
-        "baseDefense": 3,
-        "specialEffect": "Stormy Weather Attack Up",
-        "location": "Damal Forest"
+        "lImageUrl": "https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_trousers_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png",
+        "lBaseDefense": 3,
+        "lSpecialEffect": "Stormy Weather Attack Up",
+        "lLocation": "Damal Forest"
     }
 ]

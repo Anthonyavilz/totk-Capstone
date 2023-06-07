@@ -20,28 +20,22 @@ module.exports = {
 
     addArmorSet: (req, res) => {
         console.log(req.body)
-        const {arName, helmObj, chestObj, legObj} = req.body
+        const {arName, hName, cName, lName} = req.body
+
+        const hIndex = helms.findIndex(helm => helm.helmId === +hName)
+        const cIndex = chestArmor.findIndex(chest => chest.chestId === +cName)
+        const lIndex = legArmor.findIndex(leg => leg.legId === +lName)
 
         let newArmorSet = {
             "userId": globalId,
             "armorSetName": arName,
-            "helmPieceName": ,
-            "helmUrl": helmObj.hURL,
-            "helmDefense": helmObj.hDefense,
-            "helmEffect": helmObj.hEffect,
-            "helmLocation": helmObj.hLocation,
-            "chestPieceName": chestObj.cName,
-            "chestUrl": chestObj.cURL,
-            "chestDefense": chestObj.cDefense,
-            "chestEffect": chestObj.cEffect,
-            "chestLocation": chestObj.cLocation,
-            "legPieceName": legObj.lName,
-            "legUrl": legObj.lURL,
-            "legDefense": legObj.lDefense,
-            "legEffect": legObj.lEffect,
-            "legLocation": legObj.lLocation 
+            ...helms[hIndex],
+            ...chestArmor[cIndex],
+            ...legArmor[lIndex]
+
         }
 
+        console.log(newArmorSet)
         armorSet.push(newArmorSet)
 
         globalId++

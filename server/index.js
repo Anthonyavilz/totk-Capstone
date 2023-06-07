@@ -13,7 +13,7 @@ app.get('/chestArmor', getChestArmor)
 app.get('/legArmor', getLegArmor)
 
 // Endpoints for Armor Creation
-app.get('/armorSet', addArmorSet)
+app.post('/armorSet', addArmorSet)
 
 
 
