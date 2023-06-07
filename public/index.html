@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Tears of The Kingdom</title>
+</head>
+<body>
+    <header>
+        <h1>Tears of The Kingdom Armor Creator</h1>
+    </header>
+    <main>
+        <section id="intro">
+            <h3>Welcome to the Tears of The Kingdom Armor creator</h3>
+        </section>
+
+        <br>
+
+        <section id="newArmorSet">
+            <form id="armorSelection">
+                <label for="helmOptions">Helm Options:</label>
+                <select id="helmSelection"></select>
+
+                <label for="chestOptions">Chest Armor Options:</label>
+                <select id="chestSelection"></select>
+
+                <label for="legOptions">Leg Armor Options:</label>
+                <select id="legSelection"></select>
+
+                <button id="addArmorSetBtn">Submit!</button>
+            </form>
+        </section>
+        
+        <br>
+
+        <section id="armorSetTable"></section>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+    {
+        "helmId": 1,
+        "helmName": "Zonaite Helm",
+        "imageUrl": "https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_helm_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png",
+        "baseDefense": 4,
+        "specialEffect": "Energy Up",
+        "location": "Light Case Island"
+    },
+    {
+        "helmId": 2,
+        "helmName": "Charged Headdress",
+        "imageUrl": "https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_headdress_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png",
+        "baseDefense": 3,
+        "specialEffect": "Stormy Weather Attack Up",
+        "location": "Dracozo River"
+    }
+]

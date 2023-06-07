@@ -1,0 +1,18 @@
+[
+    {
+        "chestId": 1,
+        "chestName": "Zonaite Waistguard",
+        "imageUrl": "https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_waistguard_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png",
+        "baseDefense": 4,
+        "specialEffect": "Energy Up",
+        "location": "Yansamin Shrine"
+    },
+    {
+        "chestId": 2,
+        "chestName": "Charged Shirt",
+        "imageUrl": "https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_shirt_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png",
+        "baseDefense": 3,
+        "specialEffect": "Stormy Weather Attack Up",
+        "location": "Dracozo Lake"
+    }
+]
