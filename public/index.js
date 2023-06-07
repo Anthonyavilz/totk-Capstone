@@ -9,8 +9,11 @@ const legSelection = document.querySelector('#legSelection')
 
 //Form Query
 const form = document.querySelector('#armorSelection')
-const armorDisplay = document.querySelector('#armorSetTable')
 const armorName = document.querySelector('#armorSetName')
+
+// Card Display Query
+const armorDisplay = document.querySelector('#armorSetTable')
+
 
 //Form selection dropdowns
 const getHelmOptions = () => {
@@ -58,6 +61,52 @@ const getLegOptions = () => {
     })
 }
 
+// Armor Card
+const createArmorCard = (armor) => {
+    const newArmorCard = document.createElement('section')
+
+    newArmorCard.innerHTML = `
+        <p>${armor.armorSetName}</p>
+        <img src=${armor.hImageUrl}>
+        <p>${armor.helmName}</p>
+        <p>${armor.hBaseDefense}</p>
+        <p>${armor.hSpecialEffect}</p>
+        <img src=${armor.cImageUrl}>
+        <p>${armor.chestName}</p>
+        <p>${armor.cBaseDefense}</p>
+        <p>${armor.cSpecialEffect}</p>
+        <p>${armor.cLocation}</p>
+        <img src=${armor.lImageUrl}
+        <p>${armor.legName}</p>
+        <p>${armor.lBaseDefense}</p>
+        <p>${armor.lSpecialEffect}</p>
+        <p>${armor.lLocation}</p>
+        <button onclick='deleteArmor(${armor.userId})'>Delete</button>
+    `
+
+    armorDisplay.appendChild(newArmorCard)
+
+}
+
+const displayArmor = (arr) => {
+    
+    for(let i = 0; i < 1; i++){
+        console.log(arr[i])
+        createArmorCard(arr[1])
+    }
+}
+
+const getArmor = () => {
+    axios.get(`${baseURL}/armorSet`)
+        .then(res => {
+            console.log(res.data[i])
+            displayArmor(res.data[1])
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
 //Form Submission
 const addArmorSet = (e) => {
     e.preventDefault()
@@ -73,13 +122,27 @@ const addArmorSet = (e) => {
     axios.post(`${baseURL}/armorSet`, armorObj)
         .then(res => {
             console.log(res.data)
+            displayArmor(res.data)
             helmSelection.value = '',
             chestSelection.value = ''
             legSelection.value = ''
+            armorName.value = ''
         })
         .catch(err => {
             console.log(err)
         })
+}
+
+const deleteArmor = (id) => {
+    armorDisplay.innerHTML = ''
+    axios.delete(`${baseURL}/armorSet/${id}`)
+    .then(res => {
+        console.log(res.data)
+        displayArmor(res.data)
+    })
+    .catch(err => {
+        console.log(err)
+    })
 }
 
 

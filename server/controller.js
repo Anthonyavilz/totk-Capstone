@@ -41,6 +41,22 @@ module.exports = {
         globalId++
 
         res.status(200).send(armorSet)
+    },
+
+    getArmorSet: (req, res) => {
+        res.status(200).send(armorSet)
+    },
+
+    deleteArmorSet: (req, res) => {
+        console.log(req.params)
+
+        let {id} = req.params
+
+        const index = armorSet.findIndex(armor => armor.userId === +id)
+
+        armorSet.splice(index, 1)
+
+        res.status(200).send(armorSet)
     }
 
 

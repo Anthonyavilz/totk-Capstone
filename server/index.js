@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const {getHelms, getChestArmor, getLegArmor, addArmorSet} = require('./controller')
+const {getHelms, getChestArmor, getLegArmor, addArmorSet, getArmorSet, deleteArmorSet} = require('./controller')
 
 const app = express()
 
@@ -12,8 +12,12 @@ app.get('/helms', getHelms)
 app.get('/chestArmor', getChestArmor)
 app.get('/legArmor', getLegArmor)
 
-// Endpoints for Armor Creation
+// Endpoint for Armor Creation
+app.get('/armorSet', getArmorSet)
 app.post('/armorSet', addArmorSet)
+
+// Endpoint for Armor Deletion
+app.delete('/armorSet/:id', deleteArmorSet)
 
 
 
