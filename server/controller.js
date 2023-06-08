@@ -56,7 +56,7 @@ module.exports = {
 
         armorSet.splice(index, 1)
 
-        res.status(200).send(armorSet)
+        res.sendStatus(200)
     },
 
     updateArmorSet: (req, res) => {
@@ -75,18 +75,22 @@ module.exports = {
         // option1:
         const {id} = req.params
         const {type} = req.body
-
+        console.log(req.body)
         const index = armorSet.findIndex(armor => armor.userId === +id)
 
         if(type === 'helmUpgrade'){
             armorSet[index].hBaseDefense++
-        } else if(type === 'chestUpgrade'){
+        } 
+        
+        if(type === 'chestUpgrade'){
             armorSet[index].cBaseDefense++
-        } else if(type === 'legUpgrade'){
+        }
+        
+        if(type === 'legUpgrade'){
             armorSet[index].lBaseDefense++
         }
-
-        res.status(200).send(armorSet)
+        console.log(armorSet[index])
+        res.status(200).send(armorSet[index])
     }
 
 

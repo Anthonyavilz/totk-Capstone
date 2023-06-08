@@ -96,7 +96,7 @@ const createArmorCard = (armor) => {
 const displayArmor = (arr) => {
     
     for(let i = 0; i < 1; i++){
-        console.log(arr[i])
+        console.log(arr[1])
         createArmorCard(arr[1])
     }
 }
@@ -145,7 +145,6 @@ const deleteArmor = (id) => {
     axios.delete(`${baseURL}/armorSet/${id}`)
     .then(res => {
         console.log(res.data)
-        displayArmor(res.data)
     })
     .catch(err => {
         console.log(err)
@@ -154,9 +153,10 @@ const deleteArmor = (id) => {
 
 const updateArmor = (id, type) => {
     armorDisplay.innerHTML = ''
-    axios.put(`${baseURL}/armorSet/${id}`, type)
+    axios.put(`${baseURL}/armorSet/${id}`, {type})
         .then(res => {
-            displayArmor(res.data[1])
+            console.log(res.data)
+            createArmorCard(res.data)
         })
         .catch(err => {
             console.log(err)
