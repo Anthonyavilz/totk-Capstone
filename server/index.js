@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const {getHelms, getChestArmor, getLegArmor, addArmorSet, getArmorSet, deleteArmorSet} = require('./controller')
+const {getHelms, getChestArmor, getLegArmor, addArmorSet, getArmorSet, deleteArmorSet, updateArmorSet} = require('./controller')
 
 const app = express()
 
@@ -18,6 +18,9 @@ app.post('/armorSet', addArmorSet)
 
 // Endpoint for Armor Deletion
 app.delete('/armorSet/:id', deleteArmorSet)
+
+// Endpoint for Armor Edit
+app.put('/armorSet/:id', updateArmorSet)
 
 
 

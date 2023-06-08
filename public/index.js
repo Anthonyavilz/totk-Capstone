@@ -70,20 +70,25 @@ const createArmorCard = (armor) => {
         <img src=${armor.hImageUrl}>
         <p>${armor.helmName}</p>
         <p>${armor.hBaseDefense}</p>
+        <button onclick='updateArmor(${armor.userId}, "helmUpgrade")'>Fairy Upgrade</button>
         <p>${armor.hSpecialEffect}</p>
         <img src=${armor.cImageUrl}>
         <p>${armor.chestName}</p>
         <p>${armor.cBaseDefense}</p>
+        <button onclick='updateArmor(${armor.userId}, "chestUpgrade")'>Fairy Upgrade</button>
         <p>${armor.cSpecialEffect}</p>
         <p>${armor.cLocation}</p>
         <img src=${armor.lImageUrl}
         <p>${armor.legName}</p>
         <p>${armor.lBaseDefense}</p>
+        <button onclick='updateArmor(${armor.userId}, "legUpgrade")'>Fairy Upgrade</button>
         <p>${armor.lSpecialEffect}</p>
         <p>${armor.lLocation}</p>
-        <button onclick='deleteArmor(${armor.userId})'>Delete</button>
+        <button onclick='deleteArmor(${armor.userId})'>Reset</button>
     `
-
+    // can I use the same concept of adding the different ID's for each armor to dynamically delete just those certain pieces? or would
+    // it be better to just do separate forms for them?
+    
     armorDisplay.appendChild(newArmorCard)
 
 }
@@ -133,6 +138,8 @@ const addArmorSet = (e) => {
         })
 }
 
+// Edit Armor Functions
+
 const deleteArmor = (id) => {
     armorDisplay.innerHTML = ''
     axios.delete(`${baseURL}/armorSet/${id}`)
@@ -143,6 +150,17 @@ const deleteArmor = (id) => {
     .catch(err => {
         console.log(err)
     })
+}
+
+const updateArmor = (id, type) => {
+    armorDisplay.innerHTML = ''
+    axios.put(`${baseURL}/armorSet/${id}`, type)
+        .then(res => {
+            displayArmor(res.data[1])
+        })
+        .catch(err => {
+            console.log(err)
+        })
 }
 
 
