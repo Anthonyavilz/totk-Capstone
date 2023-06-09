@@ -19,10 +19,10 @@ const armorDisplay = document.querySelector('#armorSetTable')
 const getHelmOptions = () => {
     axios.get(`${baseURL}/helms`)
     .then((res) => {
-        res.data.forEach(helm => {
+        res.data.forEach(helms => {
             const helmOptions = document.createElement('option')
-            helmOptions.setAttribute('value', helm['helmId'])
-            helmOptions.textContent = helm.helmName
+            helmOptions.setAttribute('value', helms['helm_id'])
+            helmOptions.textContent = helms.helmname
             helmSelection.appendChild(helmOptions)
         })
     })
@@ -34,10 +34,10 @@ const getHelmOptions = () => {
 const getChestOptions = () => {
     axios.get(`${baseURL}/chestArmor`)
     .then((res) => {
-        res.data.forEach(chest => {
+        res.data.forEach(chests => {
             const chestOptions = document.createElement('option')
-            chestOptions.setAttribute('value', chest['chestId'])
-            chestOptions.textContent = chest.chestName
+            chestOptions.setAttribute('value', chests['chest_id'])
+            chestOptions.textContent = chests.chestname
             chestSelection.appendChild(chestOptions)
         })
     })
@@ -49,10 +49,10 @@ const getChestOptions = () => {
 const getLegOptions = () => {
     axios.get(`${baseURL}/legArmor`)
     .then((res) => {
-        res.data.forEach(leg => {
+        res.data.forEach(legs => {
             const legOptions = document.createElement('option')
-            legOptions.setAttribute('value', leg['legId'])
-            legOptions.textContent = leg.legName
+            legOptions.setAttribute('value', legs['leg_id'])
+            legOptions.textContent = legs.legname
             legSelection.appendChild(legOptions)
         })
     })
@@ -66,51 +66,49 @@ const createArmorCard = (armor) => {
     const newArmorCard = document.createElement('section')
 
     newArmorCard.innerHTML = `
-        <p>${armor.armorSetName}</p>
-        <img src=${armor.hImageUrl}>
-        <p>${armor.helmName}</p>
-        <p>${armor.hBaseDefense}</p>
-        <button onclick='updateArmor(${armor.userId}, "helmUpgrade")'>Fairy Upgrade</button>
-        <p>${armor.hSpecialEffect}</p>
-        <img src=${armor.cImageUrl}>
-        <p>${armor.chestName}</p>
-        <p>${armor.cBaseDefense}</p>
-        <button onclick='updateArmor(${armor.userId}, "chestUpgrade")'>Fairy Upgrade</button>
-        <p>${armor.cSpecialEffect}</p>
-        <p>${armor.cLocation}</p>
-        <img src=${armor.lImageUrl}
-        <p>${armor.legName}</p>
-        <p>${armor.lBaseDefense}</p>
-        <button onclick='updateArmor(${armor.userId}, "legUpgrade")'>Fairy Upgrade</button>
-        <p>${armor.lSpecialEffect}</p>
-        <p>${armor.lLocation}</p>
-        <button onclick='deleteArmor(${armor.userId})'>Reset</button>
+        <p>${armor.armorname}</p>
+        <img src=${armor.helmurl}>
+        <p>${armor.helmname}</p>
+        <p>${armor.helmdefense}</p>
+        <button onclick'updateArmor(${armor.armorset_id}, "upgrade")'>Fairy Upgrade</button>
+        <p>${armor.helmlocation}</p>
+        <p>${armor.effectname}</p>
+        <img src=${armor.chesturl}>
+        <p>${armor.chestname}</p>
+        <p>${armor.chestdefense}</p>
+        <button onclick'updateArmor(${armor.armorset_id}, "upgrade")'>Fairy Upgrade</button>
+        <p>${armor.chestlocation}</p>
+        <p>${armor.effectname}</p>
+        <img src=${armor.legurl}>
+        <p>${armor.legname}</p>
+        <p>${armor.legdefense}</p>
+        <button onclick'updateArmor(${armor.armorset_id}, "upgrade")'>Fairy Upgrade</button>
+        <p>${armor.leglocation}</p>
+        <p>${armor.effectname}</p>
+        <button onclick='deleteArmor(${armor.armorset_id})'>Reset</button>
     `
-    // can I use the same concept of adding the different ID's for each armor to dynamically delete just those certain pieces? or would
-    // it be better to just do separate forms for them?
-    
     armorDisplay.appendChild(newArmorCard)
 
 }
 
-const displayArmor = (arr) => {
+// const displayArmor = (arr) => {
     
-    for(let i = 0; i < 1; i++){
-        console.log(arr[1])
-        createArmorCard(arr[1])
-    }
-}
+//     for(let i = 0; i < 1; i++){
+//         console.log(arr[1])
+//         createArmorCard(arr[1])
+//     }
+// }
 
-const getArmor = () => {
-    axios.get(`${baseURL}/armorSet`)
-        .then(res => {
-            console.log(res.data[i])
-            displayArmor(res.data[1])
-        })
-        .catch(err => {
-            console.log(err)
-        })
-}
+// const getArmor = () => {
+//     axios.get(`${baseURL}/armorSet`)
+//         .then(res => {
+//             console.log(res.data[i])
+//             displayArmor(res.data)
+//         })
+//         .catch(err => {
+//             console.log(err)
+//         })
+// }
 
 //Form Submission
 const addArmorSet = (e) => {
@@ -119,15 +117,15 @@ const addArmorSet = (e) => {
 
     let armorObj = {
         arName: armorName.value,
-        hName: helmSelection.value,
-        cName: chestSelection.value,
-        lName: legSelection.value
+        hName: +helmSelection.value,
+        cName: +chestSelection.value,
+        lName: +legSelection.value
     }
 
     axios.post(`${baseURL}/armorSet`, armorObj)
         .then(res => {
             console.log(res.data)
-            displayArmor(res.data)
+            createArmorCard(res.data)
             helmSelection.value = '',
             chestSelection.value = ''
             legSelection.value = ''
@@ -151,7 +149,7 @@ const deleteArmor = (id) => {
     })
 }
 
-const updateArmor = (id, type) => {
+const updateArmor = (id) => {
     armorDisplay.innerHTML = ''
     axios.put(`${baseURL}/armorSet/${id}`, {type})
         .then(res => {
