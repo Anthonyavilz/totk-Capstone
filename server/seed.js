@@ -34,6 +34,7 @@ module.exports = {
                 helmURL TEXT,
                 helmDefense INTEGER,
                 helmLocation VARCHAR(100),
+                helmLocationURL TEXT,
                 effect_id INTEGER REFERENCES specialEffects(effect_id)
             );
 
@@ -43,6 +44,7 @@ module.exports = {
                 chestURL TEXT,
                 chestDefense INTEGER,
                 chestLocation VARCHAR(100),
+                chestLocationURL TEXT,
                 effect_id INTEGER REFERENCES specialEffects(effect_id)
             );
 
@@ -52,6 +54,7 @@ module.exports = {
                 legURL TEXT,
                 legDefense INTEGER,
                 legLocation VARCHAR(100),
+                legLocationURL TEXT,
                 effect_id INTEGER REFERENCES specialEffects(effect_id)
             );
 
@@ -88,20 +91,20 @@ module.exports = {
             ('Energy Up');
 
 
-            INSERT INTO helm (helmName, helmURL, helmDefense, helmLocation, effect_id)
+            INSERT INTO helm (helmName, helmURL, helmDefense, helmLocation, helmLocationURL, effect_id)
             VALUES 
-            ('Zonaite Helm', 'https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_helm_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 4, 'Light Case Island', 21),
-            ('Charged Headdress', 'https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_headdress_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 3, 'Dracozo River', 6);
+            ('Zonaite Helm', 'https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_helm_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 4, 'Light Case Island', 'https://mapgenie.io/zelda-tears-of-the-kingdom/maps/hyrule?locationIds=279584', 21),
+            ('Charged Headdress', 'https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_headdress_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 3, 'Dracozo River', 'https://mapgenie.io/zelda-tears-of-the-kingdom/maps/hyrule?locationIds=282574', 6);
 
-            INSERT INTO chest (chestName, chestURL, chestDefense, chestLocation, effect_id)
+            INSERT INTO chest (chestName, chestURL, chestDefense, chestLocation, chestLocationURL, effect_id)
             VALUES
-            ('Zonaite Waistguard','https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_waistguard_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 4,'Yansamin Shrine', 21),
-            ('Charged Shirt','https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_shirt_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 3,'Dracoxo Lake', 6);
+            ('Zonaite Waistguard','https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_waistguard_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 4, 'Yansamin Shrine', 'https://mapgenie.io/zelda-tears-of-the-kingdom/maps/hyrule?locationIds=279590', 21),
+            ('Charged Shirt','https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_shirt_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 3, 'Dracoxo Lake', 'https://mapgenie.io/zelda-tears-of-the-kingdom/maps/hyrule?locationIds=282578', 6);
             
-            INSERT INTO leg (legName, legURL, legDefense, legLocation, effect_id)
+            INSERT INTO leg (legName, legURL, legDefense, legLocation, legLocationURL, effect_id)
             VALUES
-            ('Zonaite Shin Guard', 'https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_shin_guards_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 4,'Sky Mine', 21),
-            ('Charged Trousers', 'https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_trousers_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 3,'Damal Forest', 6);
+            ('Zonaite Shin Guard', 'https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/zonaite_shin_guards_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 4,'Sky Mine', 'https://mapgenie.io/zelda-tears-of-the-kingdom/maps/hyrule?locationIds=280286', 21),
+            ('Charged Trousers', 'https://zeldatearsofthekingdom.wiki.fextralife.com/file/Zelda-Tears-of-the-Kingdom/charged_trousers_armor_zelda_tears_of_the_kingdom_wiki_guide_200px.png', 3,'Damal Forest', 'https://mapgenie.io/zelda-tears-of-the-kingdom/maps/hyrule?locationIds=282577', 6);
         `).then(() => {
             console.log('DB seeded!')
             res.sendStatus(200)

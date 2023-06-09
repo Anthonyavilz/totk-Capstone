@@ -68,47 +68,25 @@ const createArmorCard = (armor) => {
     newArmorCard.innerHTML = `
         <p>${armor.armorname}</p>
         <img src=${armor.helmurl}>
-        <p>${armor.helmname}</p>
-        <p>${armor.helmdefense}</p>
-        <button onclick'updateArmor(${armor.armorset_id}, "upgrade")'>Fairy Upgrade</button>
-        <p>${armor.helmlocation}</p>
-        <p>${armor.effectname}</p>
+        <p>Helm Name: ${armor.helmname}</p>
+        <p>Base Defense: ${armor.helmdefense}</p>
+        <p>Location:</p><a href="${armor.helmlocationurl}" target="_blank" rel="noopener noreferrer">${armor.helmlocation}</a>
+        <p>Special Effect: ${armor.effectname}</p>
         <img src=${armor.chesturl}>
-        <p>${armor.chestname}</p>
-        <p>${armor.chestdefense}</p>
-        <button onclick'updateArmor(${armor.armorset_id}, "upgrade")'>Fairy Upgrade</button>
-        <p>${armor.chestlocation}</p>
-        <p>${armor.effectname}</p>
+        <p>Chest Piece Name: ${armor.chestname}</p>
+        <p>Base Defense: ${armor.chestdefense}</p>
+        <p>Location:</p><a href="${armor.chestlocationurl}" target="_blank" rel="noopener noreferrer">${armor.chestlocation}</a>
+        <p>Special Effect: ${armor.effectname}</p>
         <img src=${armor.legurl}>
-        <p>${armor.legname}</p>
-        <p>${armor.legdefense}</p>
-        <button onclick'updateArmor(${armor.armorset_id}, "upgrade")'>Fairy Upgrade</button>
-        <p>${armor.leglocation}</p>
-        <p>${armor.effectname}</p>
+        <p>Leg Piece Name: ${armor.legname}</p>
+        <p>Base Defense: ${armor.legdefense}</p>
+        <p>Location:</p><a href="${armor.leglocationurl}" target="_blank" rel="noopener noreferrer">${armor.leglocation}</a>
+        <p>Special Effect: ${armor.effectname}</p>
         <button onclick='deleteArmor(${armor.armorset_id})'>Reset</button>
     `
     armorDisplay.appendChild(newArmorCard)
 
 }
-
-// const displayArmor = (arr) => {
-    
-//     for(let i = 0; i < 1; i++){
-//         console.log(arr[1])
-//         createArmorCard(arr[1])
-//     }
-// }
-
-// const getArmor = () => {
-//     axios.get(`${baseURL}/armorSet`)
-//         .then(res => {
-//             console.log(res.data[i])
-//             displayArmor(res.data)
-//         })
-//         .catch(err => {
-//             console.log(err)
-//         })
-// }
 
 //Form Submission
 const addArmorSet = (e) => {
@@ -149,17 +127,21 @@ const deleteArmor = (id) => {
     })
 }
 
-const updateArmor = (id) => {
-    armorDisplay.innerHTML = ''
-    axios.put(`${baseURL}/armorSet/${id}`, {type})
-        .then(res => {
-            console.log(res.data)
-            createArmorCard(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-}
+// Upgrade feature (needs to have a different data set pulled so that it can access the number on the data table
+// without it changing it's actual data)
+
+// const updateArmor = (id, type) => {
+//     console.log('upgrade armor hit')
+//     armorDisplay.innerHTML = ''
+//     axios.put(`${baseURL}/armorSet/${id}`, {type})
+//         .then(res => {
+//             console.log(res.data)
+//             createArmorCard(res.data)
+//         })
+//         .catch(err => {
+//             console.log(err)
+//         })
+// }
 
 
 

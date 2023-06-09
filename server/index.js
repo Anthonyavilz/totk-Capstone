@@ -4,7 +4,7 @@ const cors = require('cors')
 const {SERVER_PORT} = process.env
 
 const {seed} = require('./seed')
-const {getHelms, getChestArmor, getLegArmor, addArmorSet, deleteArmorSet, updateArmorSet} = require('./controller')
+const {getHelms, getChestArmor, getLegArmor, addArmorSet, deleteArmorSet} = require('./controller')
 
 const app = express()
 
@@ -26,7 +26,7 @@ app.post('/armorSet', addArmorSet)
 app.delete('/armorSet/:id', deleteArmorSet)
 
 // Endpoint for Armor Edit
-app.put('/armorSet/:id', updateArmorSet)
+// app.put('/armorSet/:id', updateArmorSet)
 
 
 app.listen(SERVER_PORT, () => console.log(`Getting armor at ${SERVER_PORT}`))
