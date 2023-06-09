@@ -63,26 +63,90 @@ const getLegOptions = () => {
 
 // Armor Card
 const createArmorCard = (armor) => {
-    const newArmorCard = document.createElement('section')
+    // const newHelmCard = document.createElement('section')
+    // newHelmCard.innerHTML = `
+    //     <table>
+    //         <tr>
+    //             <td><img src=${armor.helmurl}></td>
+    //             <td>
+    //                 <p>Helm Name: ${armor.helmname}</p>
+    //                 <p>Base Defense: ${armor.helmdefense}</p>
+    //                 <p>Location:</p><a href="${armor.helmlocationurl}" target="_blank" rel="noopener noreferrer">${armor.helmlocation}</a>
+    //                 <p>Special Effect: ${armor.helmeffect}</p>
+    //             </td>
+    //         </tr>
+    //     </table>
+    // `
+    // const newChestCard = document.createElement('section')
+    // newChestCard.innerHTML = `
+    //     <table>
+    //         <tr>
+    //             <td><img src=${armor.chesturl}></td>
+    //             <td>
+    //                 <p>Chest Piece Name: ${armor.chestname}</p>
+    //                 <p>Base Defense: ${armor.chestdefense}</p>
+    //                 <p>Location:</p><a href="${armor.chestlocationurl}" target="_blank" rel="noopener noreferrer">${armor.chestlocation}</a>
+    //                 <p>Special Effect: ${armor.chesteffect}</p>
+    //             </td>
+    //         </tr>
+    //     </table>
+    // `
 
+    // const newLegCard = document.createElement('section')
+    // newLegCard.innerHTML = `
+    //     <table>
+    //         <tr>
+    //             <td><img src=${armor.legurl}></td>
+    //             <td>
+    //                 <p>Leg Piece Name: ${armor.legname}</p>
+    //                 <p>Base Defense: ${armor.legdefense}</p>
+    //                 <p>Location:</p><a href="${armor.leglocationurl}" target="_blank" rel="noopener noreferrer">${armor.leglocation}</a>
+    //                 <p>Special Effect: ${armor.legeffect}</p>
+    //             </td>
+    //         </tr>
+    //     </table>
+    // `
+    
+    
+    
+    const newArmorCard = document.createElement('section')
+    newArmorCard.setAttribute('class', 'createdSection')
     newArmorCard.innerHTML = `
-        <p>${armor.armorname}</p>
-        <img src=${armor.helmurl}>
-        <p>Helm Name: ${armor.helmname}</p>
-        <p>Base Defense: ${armor.helmdefense}</p>
-        <p>Location:</p><a href="${armor.helmlocationurl}" target="_blank" rel="noopener noreferrer">${armor.helmlocation}</a>
-        <p>Special Effect: ${armor.helmeffect}</p>
-        <img src=${armor.chesturl}>
-        <p>Chest Piece Name: ${armor.chestname}</p>
-        <p>Base Defense: ${armor.chestdefense}</p>
-        <p>Location:</p><a href="${armor.chestlocationurl}" target="_blank" rel="noopener noreferrer">${armor.chestlocation}</a>
-        <p>Special Effect: ${armor.chesteffect}</p>
-        <img src=${armor.legurl}>
-        <p>Leg Piece Name: ${armor.legname}</p>
-        <p>Base Defense: ${armor.legdefense}</p>
-        <p>Location:</p><a href="${armor.leglocationurl}" target="_blank" rel="noopener noreferrer">${armor.leglocation}</a>
-        <p>Special Effect: ${armor.legeffect}</p>
-        <button onclick='deleteArmor(${armor.armorset_id})'>Reset</button>
+        <table>
+            <tr class="armorTitle">
+                <td colspan="2"><h1>${armor.armorname}</h1></td>
+            </tr>
+            <tr>
+                <td class='imgCell'><img src=${armor.helmurl}></td>
+                <td class="listedItems">
+                    <h4>${armor.helmname}</h4>
+                    <h4>Base Defense: ${armor.helmdefense}</h4>
+                    <h4>Location:</h4><a href="${armor.helmlocationurl}" target="_blank" rel="noopener noreferrer">${armor.helmlocation}</a>
+                    <h4>Special Effect: ${armor.helmeffect}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td class='imgCell'><img src=${armor.chesturl}></td>
+                <td class="listedItems">
+                    <h4>${armor.chestname}</h4>
+                    <h4>Base Defense: ${armor.chestdefense}</h4>
+                    <h4>Location:</h4><a href="${armor.chestlocationurl}" target="_blank" rel="noopener noreferrer">${armor.chestlocation}</a>
+                    <h4>Special Effect: ${armor.chesteffect}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td class='imgCell'><img src=${armor.legurl}></td>
+                <td class="listedItems">
+                    <h4>${armor.legname}</h4>
+                    <h4>Base Defense: ${armor.legdefense}</h4>
+                    <h4>Location:</h4><a href="${armor.leglocationurl}" target="_blank" rel="noopener noreferrer">${armor.leglocation}</a>
+                    <h4>Special Effect: ${armor.legeffect}</h4>
+                </td>
+            </tr>
+            <tr class='buttonRow'>
+                <td colspan='2'><button onclick='deleteArmor(${armor.armorset_id})'>Reset</button></td>
+            </tr>
+        </table>
     `
     armorDisplay.appendChild(newArmorCard)
 

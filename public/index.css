@@ -1,5 +1,101 @@
+@font-face {
+    font-family: "Triforce";
+    src: url('./fonts/Triforce.ttf') format('truetype');
+}
+
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Triforce';
+    letter-spacing: .75px;
+    font-weight: lighter;
+    background-color: #9ca4a1;
+    color: black;
+    margin: auto;
+}
+
+header {
+    background-color: #9ca4a1;
+    width: 100vw;
+    text-align: center;
+    font-size: x-large;
+}
+
+main {
+    background-color: #9ca4a1;
+}
+
+footer {
+    background-color: #9ca4a1;
+    text-align: center;
+    width: 100vw;
+}
+
+#intro {
+    text-align: center;
+    font-size: larger;
+}
+
+#newArmorSet {
+    text-align: center;
+    font-size: larger;
+}
+
+
+/* Table Modifications */
+table {
+    /* background-color: white; */
+    width: 50vw;
+}
+
+.armorTitle {
+    text-align: center;
+}
+
+.imgCell {
+    text-align: center;
+}
+
+.listedItems {
+    text-align: center;
+}
+
+.buttonRow {
+    text-align: center;
+}
+
+
+/* Link Colors */
+a {
+    color: black;
+}
+
+a:link {
+    color: #2d493d;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #f6f6f6;
+}
+
+a:active {
+    color: black;
+}
+
+/* Sizing for GitHub Picture */
+#gitHubPic {
+    background-color: #9ca4a1;
+    height: 5vh;
+    border-radius: 10vh;
+}
+
+/* Sizing for link table */
+.linksTable {
+    width: 100vw;
 }
