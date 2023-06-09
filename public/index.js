@@ -71,17 +71,17 @@ const createArmorCard = (armor) => {
         <p>Helm Name: ${armor.helmname}</p>
         <p>Base Defense: ${armor.helmdefense}</p>
         <p>Location:</p><a href="${armor.helmlocationurl}" target="_blank" rel="noopener noreferrer">${armor.helmlocation}</a>
-        <p>Special Effect: ${armor.effectname}</p>
+        <p>Special Effect: ${armor.helmeffect}</p>
         <img src=${armor.chesturl}>
         <p>Chest Piece Name: ${armor.chestname}</p>
         <p>Base Defense: ${armor.chestdefense}</p>
         <p>Location:</p><a href="${armor.chestlocationurl}" target="_blank" rel="noopener noreferrer">${armor.chestlocation}</a>
-        <p>Special Effect: ${armor.effectname}</p>
+        <p>Special Effect: ${armor.chesteffect}</p>
         <img src=${armor.legurl}>
         <p>Leg Piece Name: ${armor.legname}</p>
         <p>Base Defense: ${armor.legdefense}</p>
         <p>Location:</p><a href="${armor.leglocationurl}" target="_blank" rel="noopener noreferrer">${armor.leglocation}</a>
-        <p>Special Effect: ${armor.effectname}</p>
+        <p>Special Effect: ${armor.legeffect}</p>
         <button onclick='deleteArmor(${armor.armorset_id})'>Reset</button>
     `
     armorDisplay.appendChild(newArmorCard)

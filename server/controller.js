@@ -49,19 +49,14 @@ module.exports = {
             INSERT INTO armorset (armorname, helmArmor_id, chestArmor_id, legArmor_id)
             VALUES ('${arName}', ${hName}, ${cName}, ${lName});
 
-            SELECT 
-            
-            a.armorset_id, a.armorname, a.helmArmor_id, a.chestArmor_id, a.legArmor_id,
-            h.helm_id, helmname, h.helmurl, h.helmdefense, h.helmlocation, h.helmlocationurl, h.effect_id,
-            c.chest_id, c.chestname, c.chesturl, c.chestdefense, c.chestlocation, c.chestlocationurl, c.effect_id,
-            l.leg_id, l.legname, l.legurl, l.legdefense, l.leglocation, l.leglocationurl, l.effect_id,
-            e.effect_id, e.effectname
-             
+            SELECT *
             FROM armorset AS a
-            JOIN helm AS h ON a.helmarmor_id = h.helm_id
-            JOIN chest AS c ON a.chestarmor_id = c.chest_id
-            JOIN leg AS l ON a.legarmor_id = l.leg_id
-            JOIN specialeffects AS e ON h.effect_id = e.effect_id
+            INNER JOIN helm AS h
+            ON a.helmarmor_id = h.helm_id
+            INNER JOIN chest AS c
+            ON a.chestarmor_id = c.chest_id
+            INNER JOIN leg AS l
+            ON a.legarmor_id = l.leg_id
             `)
         .then(dbRes => {
             console.log(dbRes[0])
