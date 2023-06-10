@@ -62,53 +62,7 @@ const getLegOptions = () => {
 }
 
 // Armor Card
-const createArmorCard = (armor) => {
-    // const newHelmCard = document.createElement('section')
-    // newHelmCard.innerHTML = `
-    //     <table>
-    //         <tr>
-    //             <td><img src=${armor.helmurl}></td>
-    //             <td>
-    //                 <p>Helm Name: ${armor.helmname}</p>
-    //                 <p>Base Defense: ${armor.helmdefense}</p>
-    //                 <p>Location:</p><a href="${armor.helmlocationurl}" target="_blank" rel="noopener noreferrer">${armor.helmlocation}</a>
-    //                 <p>Special Effect: ${armor.helmeffect}</p>
-    //             </td>
-    //         </tr>
-    //     </table>
-    // `
-    // const newChestCard = document.createElement('section')
-    // newChestCard.innerHTML = `
-    //     <table>
-    //         <tr>
-    //             <td><img src=${armor.chesturl}></td>
-    //             <td>
-    //                 <p>Chest Piece Name: ${armor.chestname}</p>
-    //                 <p>Base Defense: ${armor.chestdefense}</p>
-    //                 <p>Location:</p><a href="${armor.chestlocationurl}" target="_blank" rel="noopener noreferrer">${armor.chestlocation}</a>
-    //                 <p>Special Effect: ${armor.chesteffect}</p>
-    //             </td>
-    //         </tr>
-    //     </table>
-    // `
-
-    // const newLegCard = document.createElement('section')
-    // newLegCard.innerHTML = `
-    //     <table>
-    //         <tr>
-    //             <td><img src=${armor.legurl}></td>
-    //             <td>
-    //                 <p>Leg Piece Name: ${armor.legname}</p>
-    //                 <p>Base Defense: ${armor.legdefense}</p>
-    //                 <p>Location:</p><a href="${armor.leglocationurl}" target="_blank" rel="noopener noreferrer">${armor.leglocation}</a>
-    //                 <p>Special Effect: ${armor.legeffect}</p>
-    //             </td>
-    //         </tr>
-    //     </table>
-    // `
-    
-    
-    
+const createArmorCard = (armor) => {   
     const newArmorCard = document.createElement('section')
     newArmorCard.setAttribute('class', 'createdSection')
     newArmorCard.innerHTML = `

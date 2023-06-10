@@ -46,7 +46,6 @@ footer {
 
 /* Table Modifications */
 table {
-    /* background-color: white; */
     width: 50vw;
 }
 
@@ -55,7 +54,7 @@ table {
 }
 
 .imgCell {
-    text-align: center;
+    text-align: right;
 }
 
 .listedItems {
