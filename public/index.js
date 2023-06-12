@@ -73,28 +73,43 @@ const createArmorCard = (armor) => {
             <tr>
                 <td class='imgCell'><img src=${armor.helmurl}></td>
                 <td class="listedItems">
-                    <h4>${armor.helmname}</h4>
-                    <h4>Base Defense: ${armor.helmdefense}</h4>
-                    <h4>Location:</h4><a href="${armor.helmlocationurl}" target="_blank" rel="noopener noreferrer">${armor.helmlocation}</a>
-                    <h4>Special Effect: ${armor.helmeffect}</h4>
+                    <ul>
+                        <li>${armor.helmname}</li>
+                        <br>
+                        <li>Base Defense: ${armor.helmdefense}</li>
+                        <br>
+                        <li>Location:<a href="${armor.helmlocationurl}" target="_blank" rel="noopener noreferrer">${armor.helmlocation}</a></li>
+                        <br>
+                        <li>Special Effect: ${armor.helmeffect}</li>
+                    </ul>
                 </td>
             </tr>
             <tr>
                 <td class='imgCell'><img src=${armor.chesturl}></td>
                 <td class="listedItems">
-                    <h4>${armor.chestname}</h4>
-                    <h4>Base Defense: ${armor.chestdefense}</h4>
-                    <h4>Location:</h4><a href="${armor.chestlocationurl}" target="_blank" rel="noopener noreferrer">${armor.chestlocation}</a>
-                    <h4>Special Effect: ${armor.chesteffect}</h4>
+                    <ul>
+                        <li>${armor.chestname}</li>
+                        <br>
+                        <li>Base Defense: ${armor.chestdefense}</li>
+                        <br>
+                        <li>Location:<a href="${armor.chestlocationurl}" target="_blank" rel="noopener noreferrer">${armor.chestlocation}</a></li>
+                        <br>
+                        <li>Special Effect: ${armor.chesteffect}</li>
+                    </ul>
                 </td>
             </tr>
             <tr>
                 <td class='imgCell'><img src=${armor.legurl}></td>
                 <td class="listedItems">
-                    <h4>${armor.legname}</h4>
-                    <h4>Base Defense: ${armor.legdefense}</h4>
-                    <h4>Location:</h4><a href="${armor.leglocationurl}" target="_blank" rel="noopener noreferrer">${armor.leglocation}</a>
-                    <h4>Special Effect: ${armor.legeffect}</h4>
+                    <ul>
+                        <li>${armor.legname}</li>
+                        <br>
+                        <li>Base Defense: ${armor.legdefense}</li>
+                        <br>
+                        <li>Location:<a href="${armor.leglocationurl}" target="_blank" rel="noopener noreferrer">${armor.leglocation}</a></li>
+                        <br>
+                        <li>Special Effect: ${armor.legeffect}</li>
+                    </ul>
                 </td>
             </tr>
             <tr class='buttonRow'>

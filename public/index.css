@@ -33,9 +33,19 @@ footer {
     width: 100vw;
 }
 
+
+
 #intro {
     text-align: center;
     font-size: larger;
+}
+
+#introPara {
+    /* display: inline-block; */
+    /* font-size: medium; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 #newArmorSet {
@@ -43,10 +53,22 @@ footer {
     font-size: larger;
 }
 
+#armorSetName {
+font-family: inherit;
+  width: 12%;
+  border: 0;
+  border-bottom: 2px solid black;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
 
 /* Table Modifications */
 table {
-    width: 50vw;
+    width: 100%;
 }
 
 .armorTitle {
@@ -58,7 +80,8 @@ table {
 }
 
 .listedItems {
-    text-align: center;
+    text-align: left;
+    font-size: large;
 }
 
 .buttonRow {
