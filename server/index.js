@@ -25,8 +25,5 @@ app.post('/armorSet', addArmorSet)
 // Endpoint for Armor Deletion
 app.delete('/armorSet/:id', deleteArmorSet)
 
-// Endpoint for Armor Edit
-// app.put('/armorSet/:id', updateArmorSet)
-
 
 app.listen(SERVER_PORT, () => console.log(`Getting armor at ${SERVER_PORT}`))

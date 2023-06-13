@@ -77,26 +77,4 @@ module.exports = {
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
     }
-
-    // Upgrade feature (needs to have a different data set pulled so that it can access the number on the data table
-    // without it changing it's actual data)    
-
-    // updateArmorSet: (req, res) => {
-    //     const {id} = req.params
-    //     const {type} = req.body
-        
-    //     sequelize.query(`
-    //         UPDATE armorset SET 
-    //             helmdefense = helmdefense+1,
-    //             chestdefense = chestdefense+1,
-    //             legdefense = legdefense+1
-    //         WHERE armorset_id = ${id};
-    //     `)
-    //     .then(dbRes => {
-    //         console.log(dbRes[0])
-    //         res.status(200).send(dbRes[0][dbRes[0].length-1])})
-    //     .catch(err => console.log(err))
-    // }
-
-
 }

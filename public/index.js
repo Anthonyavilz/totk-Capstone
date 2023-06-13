@@ -159,26 +159,6 @@ const deleteArmor = (id) => {
     })
 }
 
-// Edit Armor Functions
-// const updateArmor = (id, type) => {
-    //     console.log('upgrade armor hit')
-    //     armorDisplay.innerHTML = ''
-    //     axios.put(`${baseURL}/armorSet/${id}`, {type})
-    //         .then(res => {
-        //             console.log(res.data)
-        //             createArmorCard(res.data)
-        //         })
-        //         .catch(err => {
-            //             console.log(err)
-            //         })
-            // }
-            
-// Upgrade feature (needs to have a different data set pulled so that it can access the number on the data table
-// without it changing it's actual data)
-            
-            
-
-
 // event listeners 
 getHelmOptions()
 getChestOptions()
